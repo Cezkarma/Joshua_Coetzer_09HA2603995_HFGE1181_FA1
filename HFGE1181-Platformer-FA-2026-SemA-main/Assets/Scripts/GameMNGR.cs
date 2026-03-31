@@ -10,6 +10,9 @@ public class GameMNGR : MonoBehaviour
 
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private GameObject winScreen;
+
+    [SerializeField] private GameObject barricade;
+
     private void Awake()
     {
         if (instance == null)
@@ -40,6 +43,13 @@ public class GameMNGR : MonoBehaviour
     public void SetHasKey(bool value)
     {
         hasKey = value;
+
+        ///I imagine there must be a better way to do this. Such as sending out a signal that the barricade listens for and then reacts to.
+        ///But this is the most straightforward way I can think of to implement this functionality at the moment.
+        if (value)
+        {
+            barricade.SetActive(false);
+        }
     }
 
     public bool GetHasKey()
