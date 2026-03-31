@@ -30,11 +30,11 @@ public class Enemy : MonoBehaviour
     {
         if (transform.position.x > patrolPoints[patrolIndex].position.x)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(3, 3, 1);
         }
         else
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-3, 3, 1);
         }
         
         while (Vector2.Distance(transform.position, patrolPoints[patrolIndex].position) > 0.01f)
